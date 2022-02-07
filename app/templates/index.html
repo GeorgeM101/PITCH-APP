@@ -1,0 +1,21 @@
+{%extends 'base.html'%} {%block content%}
+<h1 class="text-center">
+  Here to help you make that first impression a memorable one
+</h1>
+<div class="container">
+  <h1 class="text-center">Pitch my content</h1>
+  <div class="row">
+    <div class="col-md-4">
+      {% if current_user.is_authenticated %}
+      <a href="{{url_for('home.index')}}"
+        ><button class="btn btn-primary">View Pitch</button></a
+      >
+      {%else%}
+      <p>
+        No account found
+        <a href="{{url_for('auth.login')}}">Sign in </a>here
+      </p>
+      {%endif%}
+    </div>
+  </div>
+</div>
