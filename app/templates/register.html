@@ -1,24 +1,15 @@
-{% extends "bootstrap/base.html" %}
-{% block title %}
-Login
-{% endblock %}
+{% extends "bootstrap/base.html" %} {% import "bootstrap/wtf.html" as wtf %} {%
+block title %} Login {% endblock %} {% block styles %} {{super()}} {% endblock
+%} {% block content %}
+<div class="container">
+  <form class="sign-in" methods="post" action="/login">
+    <h3>Fill in login details to continue</h3>
+    {{ form.hidden_tag() }} {{ wtf.form_field(form.username ) }} {{
+    wtf.form_field(form.password ) }} {{ wtf.form_field(form.remember ) }}
 
-{% block styles %}
-{{super()}}
-
-{% endblock %}
-
-{% block content %}
-  <div class="container">
-    <form>
-      <h3>Fill in login details to continue</h3>
-
-      <label for="Password">Password</label>
-      <input type="password" id="pass" class="form-control" placeholder="Password" required>
-      <div class="checkbox">
-        <label type="checkbox" value="remember-me">Remember me</label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
-  </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      Sign in
+    </button>
+  </form>
+</div>
 {% endblock %}
