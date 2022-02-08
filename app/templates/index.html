@@ -1,7 +1,5 @@
 {%extends 'base.html'%} {%block content%}
-<h1 class="text-center">
-  Here to help you make that first impression a memorable one
-</h1>
+<h1 class="text-center">You have 60 seconds PITCH IT!</h1>
 <div class="container">
   <h1 class="text-center">Pitch my content</h1>
   <div class="row">
@@ -12,7 +10,7 @@
       >
       {%else%}
       <p>
-        No account found
+        Seems like you don't have an account.
         <a href="{{url_for('auth.login')}}">Sign in </a>here
       </p>
       {%endif%}

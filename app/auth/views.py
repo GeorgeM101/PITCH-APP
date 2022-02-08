@@ -1,3 +1,4 @@
+from turtle import title
 from flask import render_template,request,redirect, url_for, flash
 from . import auth
 from ..models import User
@@ -17,7 +18,7 @@ def login():
 
         flash('Invalid username or Password')
 
-    title = "Pitch-It Login"
+    title = "Pitch-App Login"
     return render_template('auth/login.html',login_form = login_form,title=title)
 
 @auth.route('/register',methods = ["GET","POST"])
@@ -31,11 +32,11 @@ def register():
         
         return redirect(url_for('auth.login'))
         title = "New account"
-    return render_template('auth/signup.html',registration_form = form)
+    return render_template('auth/register.html',registration_form = form, title=title)
 
 
 @auth.route('/logout')
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for("main.index"))
+    return redirect(url_for("index.html"))
