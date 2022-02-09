@@ -2,7 +2,7 @@ import os
 
 class Config:
     SECRET_KEY = "itsprivate"
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://access:Accessd@localhost/pitchapp'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:Access@localhost/pitchapp'
 
     @staticmethod
     def init_app(app):

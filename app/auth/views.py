@@ -1,4 +1,3 @@
-from turtle import title
 from flask import render_template,request,redirect, url_for, flash
 from . import auth
 from ..models import User
@@ -29,9 +28,9 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        
+
         return redirect(url_for('auth.login'))
-        title = "New account"
+    title = "New account"
     return render_template('auth/register.html',registration_form = form, title=title)
 
 
