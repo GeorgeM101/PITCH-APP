@@ -1,4 +1,4 @@
-#!/home/access/Desktop/pitch-app/virtual/bin/python3
+#!/home/access/Desktop/pitch-app/virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
