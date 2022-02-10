@@ -9,7 +9,10 @@
 A web application to help people make great first impressions by giving good pitches.
 
 ## User Stories
-- A u
+A user should be able to:
+- Create an account
+- Like or dislike a pitch
+- Add a comment on a pitch
 
 ## Setup Instructions
 
