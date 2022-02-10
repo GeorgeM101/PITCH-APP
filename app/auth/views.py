@@ -3,7 +3,6 @@ from . import auth
 from ..models import User
 from .forms import RegistrationForm,LoginForm
 from .. import db
-from email import mail_message
 from flask_login import login_user,logout_user,login_required
 
 
@@ -30,7 +29,6 @@ def register():
         db.session.commit()
         return redirect(url_for('auth.login'))
 
-    mail_message("Welcome to watchlist","email/welcome_user",user.email,user=user)
 
     title = "New account"
     return render_template('auth/register.html',register_form =register_form, title=title)
