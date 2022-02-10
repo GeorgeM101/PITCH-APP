@@ -22,16 +22,14 @@ def login():
 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        user = User(email = form.email.data, username = form.username.data,password = form.password.data)
+    register_form = RegistrationForm()
+    if register_form.validate_on_submit():
+        user = User(email =register_form.email.data, username =register_form.username.data,password =register_form.password.data)
         db.session.add(user)
         db.session.commit()
-
-
         return redirect(url_for('auth.login'))
     title = "New account"
-    return render_template('auth/register.html',registration_form = form, title=title)
+    return render_template('auth/register.html',register_form =register_form, title=title)
 
 
 @auth.route('/logout')
