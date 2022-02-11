@@ -27,8 +27,18 @@ def create_app(config_name):
     bootstrap.init_app(app)
     db.init_app(app)
     login_manager.init_app(app)
+    
     #mail.init_app(app)
+    from flask_mail import Mail
 
+    #........
+    mail = Mail()
+
+    def create_app(config_name):
+        app = Flask(__name__)
+        #........
+        mail.init_app(app)
+    #........
 
     # Registering the blueprints
     from .main import main as main_blueprint

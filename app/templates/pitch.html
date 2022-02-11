@@ -19,5 +19,34 @@ content %}
       </ul>
     </div>
   </div>
+  <div class="col-md-4 col-lg-4">
+    <div class="card px-lg-5 my-lg-5 shadow">
+      <h5>Category</h5>
+      <ul class="list-unstyled">
+        <li class="m-2">
+          <a href="{{url_for('main.category',category_name='interview')}}">
+            Interview Pitches</a
+          >
+        </li>
+        <li class="m-2">
+          <a href="{{url_for('main.category',category_name='pickup_lines')}}">
+            Pickup Lines</a
+          >
+        </li>
+        <li class="m-2">
+          <a href="{{url_for('main.category',category_name='product_pitch')}}">
+            Product Pitches
+          </a>
+        </li>
+        <li class="m-2">
+          <a
+            href="{{url_for('main.category',category_name='promotional_pitch')}}"
+          >
+            Promotional Pitches</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 {% endblock %}

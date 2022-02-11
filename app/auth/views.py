@@ -3,6 +3,8 @@ from . import auth
 from ..models import User
 from .forms import RegistrationForm,LoginForm
 from .. import db
+
+
 from flask_login import login_user,logout_user,login_required
 
 
@@ -16,12 +18,13 @@ def login():
             return redirect(request.args.get('next') or url_for('main.index'))
 
         flash('Invalid username or Password')
-
+    
     title = "Pitch-App Login"
     return render_template('auth/login.html',login_form = login_form,title=title)
 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
+
     register_form = RegistrationForm()
     if register_form.validate_on_submit():
         user = User(email =register_form.email.data, username =register_form.username.data,password =register_form.password.data)

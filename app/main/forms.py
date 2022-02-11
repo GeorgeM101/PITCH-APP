@@ -1,7 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,PasswordField,SubmitField,BooleanField,SubmitField,TextAreaField,SelectField
-from wtforms.validators import DataRequired,Email,EqualTo
-from wtforms import ValidationError
+from wtforms import StringField,SubmitField,SubmitField,TextAreaField,SelectField
+from wtforms.validators import DataRequired
 
 class UpdateProfile(FlaskForm):
     bio = TextAreaField('Edit bio',validators=[DataRequired()])
