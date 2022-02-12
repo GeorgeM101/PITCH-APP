@@ -11,17 +11,20 @@
     <br>
   <div class="row">
     <div>
-      {% if current_user.is_authenticated %}
-      <button class="btn btn-primary">
-        <a href="{{url_for('home.index')}}">View Pitch</a>
+      <button class="btn btn-secondary">
+        <a href="{{url_for('main.index')}}">View Pitch</a>
       </button>
-      {%else%}
+      <br>
+      <br>
+      <br>
       <p>
         Don't have an account.
         <a href="{{url_for('auth.login')}}">Sign in </a>here
       </p>
-      {%endif%}
     </div>
   </div>
+</div>
+<div>
+  
 </div>
 {% endblock %}
